@@ -19,6 +19,7 @@ class App extends Component {
     return (
       <Provider>
         <Router>
+        {/* <Router basename="process.env.PUBLIC_URL"> */}
           <div className="App">
             <Header />
             <div className="container">
@@ -57,4 +58,16 @@ export default App;
         a. exact - matches the path exactly.
         b. path="/path" - sets the path
         c. component={componentName} - refers to the component to be rendered.
+*/
+
+/**  NOTE 
+**  for deployment: we exchanged browserRouter for hashRouter, because of known issues:
+    https://github.com/facebook/create-react-app/issues/1765
+**  suggested fixes:
+**  Two solutions:
+
+**  1. Don’t use HTML5 history on GitHub pages. Use [`hashHistory`](https://github.com/   ReactTraining/react-router/blob/master/docs/guides/Histories.md#hashhistory) instead. Your URLs will look like `https://rockchalkwushock.github.io/rcws-development/#path/inside/the/app`.
+
+** 2. Use `process.env.PUBLIC_URL` in your route definitions so that they work both in development and after deployment. For example: `<Route path={process.env.PUBLIC_URL + '/'}>`. This will be empty in development and `rcws-development` (inferred from `homepage`) in production.
+*
 */
