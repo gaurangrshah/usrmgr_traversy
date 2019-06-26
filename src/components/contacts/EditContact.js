@@ -13,7 +13,7 @@ class EditContact extends Component {
   };
 
   async componentDidMount() {
-    //destructure id from props
+    //destructure id from url @param :id
     const { id } = this.props.match.params;
     //create a promise and a response:
     const res = await axios.get(
